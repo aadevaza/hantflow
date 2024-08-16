@@ -151,7 +151,7 @@ input {
       -ms-flex-order: 2;
           order: 2;
   z-index: 100;
-  display: block;
+  display: none;
   cursor: pointer;
   width: calc(20 * 1px + (30 - 20) * (100vw - 0 * 1px) / (1023 - 0));
   height: calc(16 * 1px + (24 - 16) * (100vw - 0 * 1px) / (1023 - 0));

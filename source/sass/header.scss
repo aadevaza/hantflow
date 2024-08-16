@@ -39,7 +39,7 @@ $toBase: 0;
   &__burger {
     order: 2;
     z-index: 100;
-    display: block;
+    display: none;
     cursor: pointer;
     width: adaptPx(30, 20, $fromBase, $toBase);
     height: adaptPx(24, 16, $fromBase, $toBase);
