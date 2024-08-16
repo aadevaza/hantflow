@@ -1,0 +1,3 @@
+@function adaptPx($from, $to, $fromBase, $toBase) {
+  @return calc((#{$to} * 1px) + (#{$from} - #{$to}) * ((100vw - #{$toBase} * 1px) / (#{$fromBase} - #{$toBase})));
+}

@@ -1,0 +1,215 @@
+$fromBase: 1023;
+$toBase: 0;
+
+.header {
+  padding: 14px 24px;
+  width: 100%;
+  background-color: #fff;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 178px;
+  }
+
+  &__nav {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav-list,
+  &__nav-extra {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-item {
+    margin-right: 24px;
+  }
+
+  &__nav-extra-item {
+    margin-right: 8px;
+  }
+
+  &__burger {
+    order: 2;
+    z-index: 100;
+    display: block;
+    cursor: pointer;
+    width: adaptPx(30, 20, $fromBase, $toBase);
+    height: adaptPx(24, 16, $fromBase, $toBase);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__burger-icon {
+    background-color: #000;
+    height: adaptPx(4, 3, $fromBase, $toBase);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: adaptPx(10, 7, $fromBase, $toBase);
+    }
+
+    &:last-child {
+      top: adaptPx(20, 14, $fromBase, $toBase);
+    }
+  }
+
+  &__burger.active &__burger-icon:first-child {
+    opacity: 0;
+    transform: translateX(adaptPx(-20, -14, $fromBase, $toBase));
+  }
+
+  &__burger.active &__burger-icon:nth-child(2) {
+    transform: rotate(-45deg);
+    top: adaptPx(10, 7, $fromBase, $toBase);
+  }
+
+  &__burger.active &__burger-icon:last-child {
+    transform: rotate(45deg);
+    top: adaptPx(10, 7, $fromBase, $toBase);
+  }
+
+  
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .header {
+    &__wrapper {
+      justify-content: flex-start;
+    }
+    &__burger {
+      order: 2;
+      z-index: 100;
+      display: block;
+      cursor: pointer;
+      width: adaptPx(30, 20, $fromBase, $toBase);
+      height: adaptPx(24, 16, $fromBase, $toBase);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__burger-icon {
+      background-color: #000;
+      height: adaptPx(4, 3, $fromBase, $toBase);
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: adaptPx(10, 7, $fromBase, $toBase);
+      }
+
+      &:last-child {
+        top: adaptPx(20, 14, $fromBase, $toBase);
+      }
+    }
+
+    &__burger.active &__burger-icon:first-child {
+      opacity: 0;
+      transform: translateX(adaptPx(-20, -14, $fromBase, $toBase));
+    }
+
+    &__burger.active &__burger-icon:nth-child(2) {
+      transform: rotate(-45deg);
+      top: adaptPx(10, 7, $fromBase, $toBase);
+    }
+
+    &__burger.active &__burger-icon:last-child {
+      transform: rotate(45deg);
+      top: adaptPx(10, 7, $fromBase, $toBase);
+    }
+
+    &__nav-list {
+      display: none;
+      flex-direction: column;
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      transition: right 0.3s ease;
+      z-index: 11;
+      padding: 20px;
+      padding-top: 10%;
+    }
+
+    &__nav.header__nav--active &__nav-list {
+      right: 0;
+    }
+    
+    &__nav-item {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+    &__nav {
+      margin-left: auto;
+    }
+
+    
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    &__burger {
+      display: block;
+      z-index: 12;
+      cursor: pointer;
+      width: adaptPx(30, 20, $fromBase, $toBase);
+      height: adaptPx(24, 16, $fromBase, $toBase);
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__nav {
+      flex-direction: column;
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      transition: right 0.3s ease;
+      z-index: 11;
+      padding: 20px;
+
+      &--active {
+        right: 0;
+      }
+
+      &-list,
+      &-extra {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      &-item,
+      &-extra-item {
+        margin: 10px 0;
+      }
+    }
+  }
+}

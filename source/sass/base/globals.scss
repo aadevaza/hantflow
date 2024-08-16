@@ -1,0 +1,34 @@
+@import '../base/variables';
+
+body {
+  font-family: 'GraphikLCMedium', sans-serif;
+}
+
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.link-button {
+  color: $white;
+  background-color: $dynamic_black;
+  padding: 8px 24px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+.link-button:hover {
+  opacity: 0.4;
+}
+
+.link-button--intoxicate {
+  background-color: $intoxicate;
+}
+
+$fromBase: 1920;
+$toBase: 0;
+
+@media (max-width: calc(#{$fromBase} * 1px)) {
+ 
+}
