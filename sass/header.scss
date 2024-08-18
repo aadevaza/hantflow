@@ -86,6 +86,9 @@ $toBase: 0;
   
 }
 
+$fromBase: 1023;
+$toBase: 768;
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .header {
     &__wrapper {
@@ -170,7 +173,10 @@ $toBase: 0;
   }
 }
 
-@media (max-width: 767px) {
+
+$fromBase: 767;
+$toBase: 320;
+@media (max-width: calc(#{$fromBase} * 1px)) {
   .header {
     &__burger {
       display: block;
